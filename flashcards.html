@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Flashcards (フラッシュカード)</title>
+<meta charset="utf-8">
+<meta name= "viewport" content="widthpdive-width, initial-scale=1.0">
+<link rel="stylesheet" href="rahilsjapaneseguide.css">
+<link rel="icon" type="image/x-icon" href="images/logo.ico" />
+</head>
+
+
+<body>
+	<div class="container">
+		<header>
+			<h1>&nbsp&nbsp Rahil's Japanese Guide　<br> ラヒル の 日本語 ガイド</h1>
+		</header>
+		
+				
+				<div class="sidebar2">
+			<ul class="nav2">
+				<li><a href="index.html" >Home </a></li>
+				<li><a href="studylessons.html">Resources</a></li>
+				<li><a class="active" href="flashcards.html">Flashcards </a></li>
+				<li><a href="tutorials.html">Tutorials </a></li> 
+				<li><a href="anime.html">Anime</a></li> 
+				<li><a href="manga.html">Manga</a></li> 
+				<li><a href="videogames.html">Video Games </a></li> 				
+		
+
+			</ul>
+		</div>
+		
+		
+		<div class="sidebar">
+			<ul class="nav">
+				<li><a href="index.html">Home <br> ホームページ </a></li>
+				<li><a href="studylessons.html">Resources <br> 資力 </a></li>
+				<li><a class="active" href="flashcards.html">Flashcards <br> フラッシュカード </a></li> 
+				<li><a href="tutorials.html">Tutorials <br> チュトリアル</a></li> 
+				<li><a href="anime.html">Anime <br> アニメ </a></li> 
+				<li><a href="manga.html">Manga <br> マンガ </a></li> 
+				<li><a href="videogames.html">Video Games <br> テレビゲーム</a></li> 
+			
+			</ul>
+		</div>
+		
+
+		
+		<div class="midsection" id="midsection">
+		
+			<section>
+		
+		
+			<article>
+			<div class="opening2" id="opening2"> 
+			<div id=opening> 
+			
+			<h2 id="textbook">Genki I</h2>
+			
+			<h2 id="heading">Choose the chapter</h2>
+			
+			<div id="buttons"> 
+			
+		    <button type="button" id = "1" onclick = removeChapterButtons(1) >1</button> 
+					 
+		    <button type="button" id = "2" onclick = removeChapterButtons(2) >2</button> 
+			
+			<button type="button" id = "3" onclick = removeChapterButtons(3) >3</button> 
+			
+			<button type="button" id = "4" onclick = removeChapterButtons(4) >4</button> 
+			
+			<button type="button" id = "5" onclick = removeChapterButtons(5) >5</button> 
+			
+			<button type="button" id = "6" onclick = removeChapterButtons(6) (6)>6</button> 
+			
+			<button type="button" id = "7" onclick = removeChapterButtons(7) >7</button> 
+			
+			<button type="button" id = "8" onclick = removeChapterButtons(8) (8)>8</button> 
+			
+			<button type="button" id = "9" onclick = removeChapterButtons(9) (9)>9</button> 
+			
+			<button type="button" id = "10" onclick = removeChapterButtons(10) >10</button> 
+			
+			<button type="button" id = "11" onclick = removeChapterButtons(11) >11</button> 
+			
+			<button type="button" id = "12" onclick = removeChapterButtons(12) >12</button> 
+			
+			
+			
+			</div>
+			
+			
+			
+			
+			<br>
+			<br>
+			<br>
+			
+	
+	
+			</div>
+			</div>
+			
+			</article>
+		</section>
+	
+		
+		
+		
+		<footer>
+			Copyright &copy; Rahil Sagarwala<br>
+		</footer>
+	<div>
+	
+	<script>
+	
+	var chapterButtons = document.getElementsByTagName("button");
+		console.log(chapterButtons.length);
+		for (i = 0; i < chapterButtons.length; i++) {
+			chapterButtons[i].style.backgroundImage = "url('images/lightblueyellowbutton.png')";
+			chapterButtons[i].style.backgroundPosition = "right";
+			chapterButtons[i].style.backgroundRepeat = "no-repeat";
+			chapterButtons[i].style.backgroundSize = "cover";
+			chapterButtons[i].style.textDecoration = "none";
+			chapterButtons[i].style.color = "white";
+			chapterButtons[i].style.padding = "10px 10px";			
+		}
+	
+	function setLanguage(language, chapter) {
+			var englishButton = document.getElementById("english");
+			englishButton.parentNode.removeChild(englishButton);
+			
+			var japaneseButton = document.getElementById("japanese");
+			japaneseButton.parentNode.removeChild(japaneseButton);
+			
+			//Now we have chapter and language set, time to create arrays based off of switch/if statements　（24 arrays)
+			//Also need to create functions Flip and Next
+			
+			//Main and flipped arrays
+			var main = [];
+			var flip = [];
+			
+			var chapter1English = ["um...","now","English (language)", "yes", "student", "...language", "high school",
+			"P.M.", "A.M.", "...years old", "Mr./Ms. ...", "o'clock", "people...", "major", "teacher; Professor...", "That's right.", 
+			"I see.; Is that so?", "college;university", "telephone", "friend", "name", "what", "Japan", "...year student", "yes", 
+			"half", "number", "international student", "I", "U.S.A.", "Britain", "Australia", "Korea", "Sweden", "China", "science",
+			"Asian studies", "economics","international relations","computer", "anthropology", "politics", "business", "literature", "history",
+			"job; work; occupation", "doctor", "office worker", "high school student", "housewife", "graduate student", "college student", "lawyer",
+			"mother", "father", "older sister", "older brother", "younger sister", "younger brother"];
+			
+			var chapter1Japanese = ["あの","いま","えいご", "ええ", "がくせい", "~ご", "こうこう",
+			"ごご", "ごぜん", "～さい", "～さん", "～じ", "～じん", "せんこう", "せんせい", "そうです", 
+			"そうですか", "だいがく", "でんわ", "ともだち", "なまえ", "なに", "にほん", "～ねんせい", "はい", 
+			"はん", "ばんごう", "リゅうがくせい", "わたし", "アメリカ", "イギリス", "オーストラリア", "かんこく", "スウエーデン", "ちゅうごく", "かがく",
+			"アジアけんきゅう", "けえいざい","こくさいかんけい","コンピューター", "じんるいがく", "せいじ", "ビジネス", "ぶんがく", "れきし",
+			"しごと", "いしゃ", "かいしゃいん", "こうこうせい", "しゅふ", "だいがくいんせい", "だいがくせい", "べんごし",
+			"おかあさん", "おとうさん", "おねえさん", "おにいさんん", "いもうと", "おとうと"];
+			
+			var chapter2English = ["this one", "that one", "that one (over there)", "which one", "this ...", "that ...", "that ... (over there)",
+			"which ...", "here", "there", "over there", "where", "who", "delicious", "fish", "pork cutlet", "meat", "menu", "vegetable",
+			"pencil", "umbrella", "bag", "shoes", "wallet", "jeans", "dictionary", "bicycle", "newspaper", "T-shirt", "watch; clock", "notebook", 
+			"pen", "hat; cap", "book", "cafe", "bank", "toilet; restroom", "library", "post office", "U.S.A.", "Britain", "Korea", "China", "economics",
+			"computer", "business", "history", "mother", "father", "how much", "... yen", "expensive; high", "Welcome (to our store)", "... please", 
+			"Please give me ...", "then ...; if that is the case ...", "Please; Here it is", "Thank you"];
+			
+			var chapter2Japanese = ["これ", "それ", "あれ", "どれ", "この", "その","あの", "どの", "ここ", "そこ", "あそこ", "どこ", "だれ", "おいしい", "さかな", "とんかつ", "にく",
+			"メニュー", "やさい", "えんぴつ", "かさ", "かばん", "くつ", "さいふ", "ジーンズ", "じしょ", "じてんしゃ", "しんぶん", "Tシャツ", "とけい", "ノート", "ペン", "ぼうし", "ほん",
+			"きっさてん", "ぎんこう", "トイレ", "としょかん", "ゆうびんきょく", "アメリカ", "イギリス", "かんこく", "ちゅうごく", "けいざい", "コンピューター", "ビジネス", "れきし", "おかあさん", "おとうさん","いくら", 
+			"〜えん", "たかい", "いらっしゃいませ", "（〜を）おねがいします", "（〜を）ください", "じゃあ", "どうぞ", "どうも"];
+			
+			var chapter3English = ["movie", "music", "magazine", "sports", "date (romantic)", "tennis", "TV", "ice cream", "breakfast", "sake; alcohol", 
+			"green tea", "coffee", "dinner", "hamburger", "lunch", "water", "home; house", "home; house; my place", "school", "morning", "tomorrow", 
+			"when", "today", "at about ...", "tonight", "weekend", "Saturday", "Sunday", "every day", "every night", "to go", "to go back; to return",
+			"to listen; to hear", "to drink", "to speak; to talk", "to read", "to get up", "to eat", "to sleep; to go to sleep", "to see; to look at; to watch",
+			"to come", "to do", "to study", "good", "early", "not much", "not at all", "usually", "a little", "sometimes", "often; much", "That's right; Let me see", 
+			"but", "How about ...?; How is ...?"];
+			
+			var chapter3Japanese = ["えいが", "おんがく", "ざっし", "スポーツ", "デート", "テニス", "テレビ", "アイスクリーム", "あさごはん", "おさけ", "おちゃ", "コーヒー", "ばんごはん", 
+			"ハンバーガー", "ひるごはん", "みず", "いえ", "うち", "がっこう", "あさ", "あした", "いつ", "きょう", "〜ごろ", "こんばん", "しゅうまつ", "どようび", "にちようび", "まいにち",
+			"まいばん", "いく", "かえる", "きく", "のむ", "はなす", "よむ", "おきる", "たべる", "ねる","みる", "くる", "する", "べんきょうする", "いい", "はやい", "あまり", "ぜんぜん",
+			"たいてい", "ちょっと", "ときどき", "よく", "そうですね", "でも", "どうですか"];
+			
+			var chapter4English = ["part-time job", "shopping", "class", "you", "chair", "dog", "souvenir", "child", "rice; meal", "picture; photograph", 
+			"desk", "letter", "cat", "bread", "person", "e-mail", "temple", "park", "supermarket", "department store", "bus stop", "hospital", "hotel", 
+			"bookstore", "town; city", "restaurant", "yesterday", "... hours", "one hour", "last week", "when ...; at the time of ...", "Monday",
+			"Tuesday", "Wednesday", "Thursday", "Friday", "to meet; to see (a person)", "there is ...", "to buy", "to write", "to take (a picture)", 
+			"to wait", "to understand", "(a person) is in ...; stays at ...", "about (approximate measure)", "I'm sorry.", "so; therefore", "many; a lot", "together with (a person)",
+			"why", "alone", "right" , "left", "front", "back", "inside", "on", "under", "near; nearby", "next to", "between"];
+			
+			var chapter4Japanese = ["アルバイト", "かいもの", "クラス", "あなた", "いす", "いぬ", "おみやげ", "こども", "ごはん", "しゃしん", "つくえ", "てがみ", "ねこ", "パン", "ひと",
+			"メール", "おてら", "こうえん", "スーパー", "デパート", "バスてい", "びょういん", "ホテル", "ほんや", "まち", "レストラン", "きのう", "〜じかん", "いちじかん", "せんしゅう", "とき",
+			"げつようび", "かようび", "すいようび", "もくようび", "きんようび", "あう", "ある", "かう", "かく", "とる", "まつ", "わかる", "いる", "〜ぐらい", "ごめんなさい", "だから", "たくさん", 
+			"〜と", "どうして", "ひとりで", "みぎ", "ひだり", "まえ", "うしろ", "なか", "うえ", "した", "ちかく", "となり", "あいだ"];
+			
+			var chapter5English = ["sea", "postal stamps", "ticket", "surfing", "homework", "food", "birthday", "test", "weather", "drink", "postcard",
+			"bus", "airplane", "room", "I (used by men)", "holiday; day off; absence", "travel", "new", "hot (weather)", "hot (thing)", "busy (people/days)",
+			"large", "interesting; funny", "good-looking", "frightening", "cold (weather)", "fun", "small", "boring", "old (thing)", "difficult", "easy (problem); kind (person)",
+			"inexpensive; cheap (thing)", "disgusted with; to dislike", "beautiful; clean", "healthy; energetic", "quiet", "fond of; to like", "to hate", "very fond of; to love",
+			"lively", "not busy; to have a lot of free time", "to swim", "to ask", "to ride; to board", "to do; to perform", "to go out", "together", "extremely",
+			"and then", "It's okay; Not to worry; Everything is under control", "very", "what kind of ...", "[counter for flat objects]", "to (a place); as far as (a place); till (a time)",
+			"い-adjective present affirmative", "い-adjective present negative", "い-adjective past affirmative", "い-adjective past negative", "いい-irregular present affirmative",
+			"いい-irregular present negative", "いい-irregular past affirmative", "いい-irregular past negative", "な-adjective present affirmative", "な-adjective present negative",
+			"な-adjective past affirmative", "な-adjective past negative"];
+			
+			var chapter5Japanese = ["うみ", "きって", "きっぷ", "サーフィン", "しゅくだい", "たべもの", "たんじょうび", "テスト", "てんき", "のみもの", "はがき", "バス", "ひこうき", "へや", "ぼく",
+			"やすみ", "りょこう", "あたらしい", "あつい", "あつい", "いそがしい", "おおきい", "おもしろい", "かっこいい", "こわい", "さむい", "たのしい", "ちいさい", "つまらない", "ふるい",
+			"むずかしい", "やさしい", "やすい", "きらい（な）", "きれい（な）", "げんき（な）", "しずか（な）", "すき（な）", "だいきらい（な）", "だいすき（な）", "にぎやか（な）", "ひま（な）", "およぐ", "きく", "のる", "やる",
+			"でかける", "いっしょに", "すごく", "それから", "だいじょうぶ", "とても", "どんな", "〜まい", "〜まで", "〜いです", "〜くないです", "〜かったです", "〜くなかったです", "いいです", "よくないです",
+			"よかったです", "よくなかったです", "〜です", "〜じゃないです", "〜でした", "〜じゃなかったです"] ;
+			
+			var chapter6English = ["money", "bath", "kanji; Chinese character", "textbook", "this week", "CD", "municipal hospital", "shower", "next", "electricity", 
+			"train", "baggage", "personal computer", "page", "window", "night", "next week", "next year", "tough (situation)", "to play; to spend time pleasantly", 
+			"to hurry", "to take a bath", "to return (a thing)", "to turn off; to erase", "to die", "to sit down", "to stand up", "to smoke", "to use", "to help",
+			"to enter", "to carry; to hold", "to be absent (from ...); to rest", "to open (something)", "to teach; to instruct", "to get off", "to borrow", "to close (something)",
+			"to take a shower", "to turn on", "to make a phone call", "to forget; to leave behind", "to bring (a person)", "to bring (a thing)", "later on", "(do something) late",
+			"because ...", "That would be fine; That wouldn't be necessary", "right away", "Really?", "slowly; leisurely; unhurriedly", "ru-verbs て-form", "u-verbs with final う、つ、and る て-form",
+			"u-verbs with final む、ぶ、and ぬ て-form", "u-verbs with finalく て-form", "u-verb いく て-form", "u-verbs with final ぐ て-form", "u-verbs with final す て-form", 
+			"する irregular verb て-form", "くる irregular verb て-form"];
+			
+			var chapter6Japanese = ["おかね", "おふろ", "かんじ", "きょうかしょ", "こんしゅう", "シーディー", "しみんびょういん", "シャワー", "つぎ", "でんき", "でんしゃ", "にもつ", "パソコン",
+			"ページ", "まど", "よる", "らいしゅう", "らいねん", "たいへん（な）", "あそぶ", "いそぐ", "おふろにはいる", "かえす", "けす", "しぬ", "すわる", "たつ", "たばこをすう", "つかう",
+			"てつだう", "はいる", "もつ", "やすむ", "あける", "おしえる", "おりる", "かりる", "しめる", "シャワーをあびる", "つける", "でんわをかける", "わすれる", "つれてくる", "もってくる", "あとで", 
+			"おそく", "〜から", "けっこうです", "すぐ", "ほんとうですか", "ゆっくり", "〜て", "〜って", "〜んで", "〜いて", "〜って", "〜いで", "〜して", "して", "きて"];
+			
+			var chapter7English = ["(my) older sister", "apartment", "younger sister", "song", "grandfather; old man", "younger brother", "man", 
+			"older brother", "older sister", "grandmother; old woman", "woman", "company", "family", "hair", "brothers and sisters", "mouth", "country; place of origin",
+			"car", "game", "convenience store", "club activity", "cafeteria; dining commons", "(my) father", "DVD", "(my) mother", "eye", "glasses", "bright; smart; clever",
+			"cute", "tall (stature)", "short (stature)", "long", "fast", "short (length)", "kind", "convenient", "to sing", "to put on (a hat)", "to get to know",
+			"I know", "I do not know", "to live", "to put on (items below your waist)", "to gain weight", "to be on the heavy side", "to put on (glasses)", "to put on (clothes above your waist)",
+			"to work for", "to lose weight", "to be thin", "to get married", "... but", "not ... anything", "[counter for people]", "one person", "two people", 
+			"nothing in particular", "Hello? (used on the phone)", "of course", "if you like", "い-adjective て-form", "いい irregular て-form", "な-adjective て-form", "noun + です て-form"];
+			
+			var chapter7Japanese = ["おね", "アパート", "いもうと", "うた", "おじいさん", "おとうと", "おとこのひと", "おにいさん", "おねえさん", "おばあさん", "おんなのひと", "かいしゃ",
+			"かぞく", "かみ", "きょうだい", "くち", "くに", "くるま", "ゲーム", "コンビニ", "サークル", "しょくどう", "ちち", "ディーブイディー", "はは", "め", "めがね", "あたまがいい", "かわいい",
+			"せがたかい", "せがひくい", "ながい", "はやい", "みじかい", "しんせつ（な）", "べんり（な）", "うたう", "かぶる", "しる", "しっています", "しりません", "すむ", "はく", "ふとる",
+			"ふとっています", "（めがねを）かける", "きる", "つとめる", "やせる", "やせています", "けっこんする", "〜が", "なにも", "〜にん", "ひとり", "ふたり", "べつに", "もしもし", "もちろん", 
+			"よかったら", "〜くて", "よくて", "〜で", "〜で"];
+			
+			var chapter8English = ["the day after tomorrow", "rain", "office worker", "camera", "karaoke", "air", "this morning", "blackboard", "this month",
+			"job; work; occupation", "college student", "weather forecast", "place", "tomato", "summer", "something", "party", "barbecue", "chopsticks", "winter",
+			"homestay; living with a local family", "everyweek", "next month", "skillful; good at...", "clumsy; poor at...", "famous", "it rains", "to wash", "to say",
+			"to need", "to be late", "to think", "to cut", "to make", "to take (a thing)", "to stare (at...)", "to throw away", "to begin", "to drive",
+			"to do laundry", "to clean", "to call", "to cook", "always", "uh-uh; no", "uh-huh; yes", "Cheers! (a toast)", "That's too bad", "about...; concerning...",
+			"not... yet", "all (of the people) together", "Negative short form of irregular verb する", "Negative short form of irregular verb くる", "Negative short form of irregular verb ある"];
+			
+			var chapter8Japanese = ["あさって", "あめ", "かいしゃいん", "カメラ", "カラオケ", "くうき", "けさ", "こくばん", "こんげつ", "しごと", "だいがくせい", "てんきよほう", "ところ", "トマト", 
+			"なつ", "なにか", "パーティー", "バーベキュー", "はし", "ふゆ", "ホームステイ", "まいしゅう", "らいげつ", "じょうず（な）", "へた（な）", "ゆうめい（な）", "あめがふる", "あらう", "いう", "いる", 
+			"おそくなる", "おもう", "きる", "つくる", "もっていく", "じろじろみる", "すてる", "はじめる", "うんてんする", "せんたくする", "そうじする", "でんわする", "りょうりする", "いつも", "ううん", "うん", 
+			"かんぱい", "ざんねん（ですね）", "〜について", "まだ", "みんなで", "しない", "こない", "ない"];
+			
+			var chapter9English = ["good child", "color", "boxed lunch", "Kabuki; traditional Japanese theatrical art", "guitar", "last year", "medicine",
+			"to take medicine", "concert", 	"near future", "essay; composition", "exam", "ski", "last month", "word; vocabulary", "piano", "pizza", "illness; sickness",
+			"blue", "red", "black", "lonely", "white", "yellow", "brown", "young", "green", "gray", "pink", "silver", "purple", "light blue", "gold", 
+			"mean-spirited", "to dance", "(something) ends", "to be popular", "(something) begins", "to play (a string instrument or piano)", "to get (from somebody)", 
+			"to memorize", "to appear/attend; to exit", "to do physical exercises", "to take a walk", "from...", "by all means", "by the way", "all", "already",
+			"one (small object)", "two (small objects)", "three (small objects)", "four (small objects)", "five (small objects)", "six (small objects)", 
+			"seven (small objects)", "eight (small objects)", "nine (small objects)", "ten (small objects)"];
+			
+			var chapter9Japanese = ["いいこ", "いろ", "おべんとう", "かぶき", "ギター", "きょねん", "くすり", "くすりをのむ", "コンサート", "こんど", "さくぶん", "しけん", "スキー", "せんげつ", "たんご",
+			"ピアノ", "ピザ", "びょうき", "あおい", "あかい", "くろい", "さびしい", "しろい", "きいろい", "ちゃいろい", "わかい", "みどり", "はいいろ", "ピンク", "ぎんいろ", "むらさき", "みずいろ",
+			"きんいろ", "いじわる（な）", "おどる", "おわる", "にんきがある", "はじまる", "ひく", "もらう", "おぼえる", "でる", "うんどうする", "さんぽする", "〜から", "ぜひ", "ところで", "みんな", 
+			"もう", "ひとつ", "ふたつ", "みっつ", "よっつ", "いつつ", "むっつ", "ななつ", "やっつ", "ここのつ", "とお"];
+			
+			var chapter10English = ["fall", "doctor", "station", "rich person", "face", "season", "milk", "credit card", "cake", "this year",
+			"soccer", "shirt", "Shinkansen; Bullet Train", "sushi", "life; living", "world", "subway", "gloves", "tempura", "barber shop", "spring",
+			"pants", "beauty parlor", "flight", "ship; boat", "Baseball", "celebrity", "reservation", "next semester", "apple", "warm", "slow; late", 
+			"cool (weather—not used for things)", "cold (things/people)", "sleepy", "easy; simple", "to take (amount of time/money) (no particle)",
+			"to stay (at a hotel, etc.) (〜に)", "to become", "to pay(〜を)", "to decide (〜を)", "to travel", "to practice (〜を)", "on foot", "best", "or",
+			"for...months", "in...time; after...", "these days", "for...weeks", "by (means of transportation); with (a tool)", "how; by what means", "which",
+			"which", "how much; how long", "...years", "(do something) early; fast"];
+			var chapter10Japanese = ["あき", "いしゃ", "えき", "おかねもち", "かお", "きせつ", "ぎゅうにゅう", "クレジットカード", "ケーキ", "ことし", "サッカー", "シャツ", "しんかんせん",
+			"すし", "せいかつ", "せかい", "ちかてつ", "てぶくろ", "てんぷら", "とこや", "はる", "パンツ", "びよういん", "びん", "ふね", "やきゅう", "ゆうめいじん", "よやく", "らいがっき", "りんご", 
+			"あたたかい", "おそい", "すずしい", "つめたい", "ねむい", "かんたん (な)", "かかる", "とまる", "なる", "はらう", "きめる", "りょこうする", "れんしゅうする", "あるいて", "いちばん",
+			"〜か〜", "〜かげつ", "〜ご", "このごろ", "〜しゅうかん", "〜で", "どうやって", "どちら", "どっち", "どのぐらい", "〜ねん", "はやく"];
+			
+			var chapter11English = ["Australia", "snack; sweets", "New Year's", "boy", "festival", "toy", "spa; hot spring", "girl", "foreign country", "singer",
+			"river", "camp", "this person (polite)", "this semester", "president of a company", "class", "future", "shrine", "fishing", "drive", "beer", "art museum",
+			"host family", "lake", "mountain", "dream", "roommate", "to tell a lie", "to become hungry", "to own (a pet)", "to cut (classes)", "to take (a class); to get (a grade)",
+			"to learn", "to climb", "to work", "to get tired", "to quit", "to have a fight; to quarrel", "to introduce", "to go on a diet", "to be late (for an appointment)",
+			"to study abroad", "after (an event)", "coming from", "and then", "just...; only...", "... points", "it has been a long time", "okay; so-so", "more",
+			"writer", "journalist", "police officer", "actor; actress", "actress", "nurse", "firefighter", "cartoonist", "astronaut", "baseball player", "president of a country"];
+			
+			var chapter11Japanese = ["オーストラリア", "おかし", "おしょうがつ", "おとこのこ", "おまつり", "おもちゃ", "おんせん", "おんなのこ", "がいこく", "かしゅ", "かわ", "キャンプ",
+			"こちら", "こんがっき", "しゃちょう", "じゅぎょう", "しょうらい", "じんじゃ", "つり", "ドライブ", "ビール", "びじゅつかん", "ホストフャミリー", "みずうみ", "やま", "ゆめ", "ルームメート", "うそをつく", 
+			"おなかがすく", "かう", "サボる", "とる", "ならう", "のぼる", "はたらく", "つかれる", "やめる", "けんかする", "しょうかいする", "ダイエットする", "ちこくする", "りゅうがくする", "あと", "しゅっしん", "そして",
+			"〜だけ", "〜てん", "ひさしぶり", "まあまあ", "もっと", "さっか", "ジャーナリスト", "けいさつかん", "はいゆう", "じょゆう", "かんごし", "しょうぼうし", "まんがか", "うちゅうひこうし", "やきゅうせんしゅ", "だいとうりょう"];
+	
+			var chapter12English = ["leg; foot", "meaning", "restroom", "stomach", 	"a cold", "girlfriend; she", "boyfriend; he", "temperature (weather-not used for things)", 
+			"cloudy weather", "match; game", "juice", "politics", "grade (on a test, etc.)", "cough", "throat", "tooth", "flower", "sunny weather", "clothes", "hangover",
+			"present", "homesickness", "minus", "thing (concrete object)", "snow", "business to take care of", "sweet", "hurt; painful", "there are many...", 
+			"narrow; not spacious", "inconvenient; to have a scheduling conflict", "bad", "nice", "to walk", "to catch a cold", "to be interested (in...)", "to lose",
+			"to have a fever", "to become thirsty", "to cough", "to break up; to separate", "to get nervous", "to worry", "Get well soon.", "don't look well", 
+			"probably; maybe", "as much as possible", "probably; right...?", "... degrees (temperature)", "for two to three days", "because...", "for the first time",
+			"very soon; in a few moments/days"];
+			
+			var chapter12Japanese = ["あし", "いみ", "おてあらい", "おなか", "かぜ", "かのじょ", "かれ", "きおん", "くもり", "しあい", "ジュース", "せいじ", "せいせき", "せき", "のど", "は", "はな",
+			"はれ", "ふく", "ふつかよい", "プレゼント", "ホームシック", "マイナス", "もの", "ゆき", "ようじ", "あまい", "いたい", "おおい", "せまい", "つごうがわるい", "わるい", "すてき（な）", "あるく", "かぜをひく", "きょうみがある",
+			"なくす", "ねつがある", "のどがかわく", "せきがでる", "わかれる", "きんちょうする", "しんぱいする", "おだいじに", "げんきがない", "たぶん", "できるだけ", "〜でしょう", "〜ど", "にさんにち", "〜ので", 
+			"はじめて", "もうすぐ"];
+			
+			if(chapter == 1 && language == "English") {
+				main = chapter1English;
+				flip = chapter1Japanese;
+			}
+			
+			if(chapter == 1 && language == "Japanese") {
+				flip = chapter1English;
+				main = chapter1Japanese;
+
+			}
+			
+			if(chapter == 2 && language == "English") {
+				main = chapter2English;
+				flip = chapter2Japanese;
+			}
+			
+			if(chapter == 2 && language == "Japanese") {
+				flip = chapter2English;
+				main = chapter2Japanese;
+			}
+			
+			if(chapter == 3 && language == "English") {
+				main = chapter3English;
+				flip = chapter3Japanese;
+			}
+			
+			if(chapter == 3 && language == "Japanese") {
+				flip = chapter3English;
+				main = chapter3Japanese;
+			}
+			
+			if(chapter == 4 && language == "English") {
+				main = chapter4English;
+				flip = chapter4Japanese;
+			}
+			
+			if(chapter == 4 && language == "Japanese") {
+				flip = chapter4English;
+				main = chapter4Japanese;
+			}
+			
+			if(chapter == 5 && language == "English") {
+				main = chapter5English;
+				flip = chapter5Japanese;
+			}
+			
+			if(chapter == 5 && language == "Japanese") {
+				flip = chapter5English;
+				main = chapter5Japanese;
+			}
+			
+			if(chapter == 6 && language == "English") {
+				main = chapter6English;
+				flip = chapter6Japanese;
+			}
+			
+			if(chapter == 6 && language == "Japanese") {
+				flip = chapter6English;
+				main = chapter6Japanese;
+			}
+			
+			if(chapter == 7 && language == "English") {
+				main = chapter7English;
+				flip = chapter7Japanese;
+			}
+			
+			if(chapter == 7 && language == "Japanese") {
+				flip = chapter7English;
+				main = chapter7Japanese;
+			}
+			
+			if(chapter == 8 && language == "English") {
+				main = chapter8English;
+				flip = chapter8Japanese;
+			}
+			
+			if(chapter == 8 && language == "Japanese") {
+				flip = chapter8English;
+				main = chapter8Japanese;
+			}
+			
+			if(chapter == 9 && language == "English") {
+				main = chapter9English;
+				flip = chapter9Japanese;
+			}
+			
+			if(chapter == 9 && language == "Japanese") {
+				flip = chapter9English;
+				main = chapter9Japanese;
+			}
+			
+			if(chapter == 10 && language == "English") {
+				main = chapter10English;
+				flip = chapter10Japanese;
+			}
+			
+			if(chapter == 10 && language == "Japanese") {
+				flip = chapter10English;
+				main = chapter10Japanese;
+			}
+			
+			if(chapter == 11 && language == "English") {
+				main = chapter11English;
+				flip = chapter11Japanese;
+			}
+			
+			if(chapter == 11 && language == "Japanese") {
+				flip = chapter11English;
+				main = chapter11Japanese;
+			}
+			
+			if(chapter == 12 && language == "English") {
+				main = chapter12English;
+				flip = chapter12Japanese;
+			}
+			
+			if(chapter == 12 && language == "Japanese") {
+				flip = chapter12English;
+				main = chapter12Japanese;
+			}
+			
+			
+			
+			
+			//hold initial word, start index at 0
+			var wordIndex = 0;
+			var word = document.getElementById("heading");
+			word.innerHTML = main[0];
+			
+			var flipButton = document.createElement("BUTTON");
+			flipButton.style.backgroundImage = "url('images/lightblueyellowbutton.png')";
+			flipButton.style.backgroundPosition = "right";
+			flipButton.style.backgroundRepeat = "no-repeat";
+			flipButton.style.backgroundSize = "cover";
+			flipButton.style.textDecoration = "none";
+			flipButton.style.color = "white";
+			flipButton.style.padding = "10px 10px";					
+			flipButton.id = "flip";
+			flipButton.innerHTML = "Flip";                   
+			document.getElementById("buttons").appendChild(flipButton);
+			flipButton.addEventListener("click", function() {
+					if (wordIndex < main.length) {
+							word.innerHTML = flip[wordIndex];
+						}
+						
+						else {
+						location.reload();
+						}
+					});				
+
+			var nextButton = document.createElement("BUTTON"); 
+			nextButton.style.backgroundImage = "url('images/lightblueyellowbutton.png')";
+			nextButton.style.backgroundPosition = "right";
+			nextButton.style.backgroundRepeat = "no-repeat";
+			nextButton.style.backgroundSize = "cover";
+			nextButton.style.textDecoration = "none";
+			nextButton.style.color = "white";
+			nextButton.style.padding = "10px 10px";				
+			nextButton.id = "next";
+			nextButton.innerHTML = "Next";                   
+			document.getElementById("buttons").appendChild(nextButton);  
+			nextButton.addEventListener("click", function() {
+						wordIndex++;
+						if (wordIndex < main.length) {
+							word.innerHTML = main[wordIndex];
+						}
+						
+						else {
+						location.reload();
+						}
+					});		
+			
+			
+			}
+			
+			
+			
+	
+	function chooseLanguage(chapter) {
+		
+			var textbook = document.getElementById("textbook");
+			textbook.parentNode.removeChild(textbook);
+		
+		    document.getElementById("heading").innerHTML = "Choose the Language";
+			
+
+			var englishButton = document.createElement("BUTTON"); 
+			englishButton.style.backgroundImage = "url('images/lightblueyellowbutton.png')";
+			englishButton.style.backgroundPosition = "right";
+			englishButton.style.backgroundRepeat = "no-repeat";
+			englishButton.style.backgroundSize = "cover";
+			englishButton.style.textDecoration = "none";
+			englishButton.style.color = "white";
+			englishButton.style.padding = "10px 10px";
+			englishButton.id = "english";
+			englishButton.innerHTML = "English";                   
+			document.getElementById("buttons").appendChild(englishButton);
+			englishButton.addEventListener("click", function() {
+				setLanguage("English", chapter);
+					});				
+
+			var japaneseButton = document.createElement("BUTTON");  
+			japaneseButton.style.backgroundImage = "url('images/lightblueyellowbutton.png')";
+			japaneseButton.style.backgroundPosition = "right";
+			japaneseButton.style.backgroundRepeat = "no-repeat";
+			japaneseButton.style.backgroundSize = "cover";
+			japaneseButton.style.textDecoration = "none";
+			japaneseButton.style.color = "white";
+			japaneseButton.style.padding = "10px 10px";			
+			japaneseButton.id = "japanese";
+			japaneseButton.innerHTML = "Japanese";                   
+			document.getElementById("buttons").appendChild(japaneseButton);  
+			japaneseButton.addEventListener("click", function() {
+				setLanguage("Japanese", chapter);
+					});		
+		}
+	
+		 function removeChapterButtons(chapter) {
+        var button1 = document.getElementById("1");
+        button1.parentNode.removeChild(button1);
+		
+		var button2 = document.getElementById("2");
+        button2.parentNode.removeChild(button2);
+		
+		var button3 = document.getElementById("3");
+        button3.parentNode.removeChild(button3);
+		
+		var button4 = document.getElementById("4");
+        button4.parentNode.removeChild(button4);
+		
+		var button5 = document.getElementById("5");
+        button5.parentNode.removeChild(button5);
+		
+		var button6 = document.getElementById("6");
+        button6.parentNode.removeChild(button6);
+		
+		var button7 = document.getElementById("7");
+        button7.parentNode.removeChild(button7);
+		
+		var button8 = document.getElementById("8");
+        button8.parentNode.removeChild(button8);
+		
+		var button9 = document.getElementById("9");
+        button9.parentNode.removeChild(button9);
+		
+		var button10 = document.getElementById("10");
+        button10.parentNode.removeChild(button10);
+		
+		var button11 = document.getElementById("11");
+        button11.parentNode.removeChild(button11);
+		
+		var button12 = document.getElementById("12");
+        button12.parentNode.removeChild(button12);
+		
+		chooseLanguage(chapter);
+    }
+
+	</script>
+	
+</body>
+</html>
